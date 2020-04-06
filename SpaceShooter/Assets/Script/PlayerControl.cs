@@ -12,11 +12,12 @@ public class PlayerControl : MonoBehaviour
     public GameObject bullet;
     //player health
     public float health;
+
     // Start is called before the first frame update
     void Start()
     {
         //set start position
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(0, -3, 0);
     }
 
     // Update is called once per frame
@@ -26,13 +27,13 @@ public class PlayerControl : MonoBehaviour
         Movement();
 
         //when space is hit, fire a bullet
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bullet, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
         }
 
         //open game over scene when player health below 0
-        if(health <= 0)
+        if (health <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
@@ -49,7 +50,7 @@ public class PlayerControl : MonoBehaviour
         transform.Translate(Vector3.up * moveSpeed * verticalInput * Time.deltaTime);
 
         //make sure player don't go beyond the screen
-        if(transform.position.x >= 10.3f)
+        if (transform.position.x >= 10.3f)
         {
             transform.position = new Vector3(10.3f, transform.position.y, transform.position.z);
         }
@@ -76,4 +77,16 @@ public class PlayerControl : MonoBehaviour
         health -= damage;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyBullet")
+        {
+            // damage to player on enemy bullet hit
+            health -= collision.gameObject.GetComponent<EnemyBullet>().power;
+
+            // destroy enemy bullet
+            Destroy(collision.gameObject);
+        }
+            
+    }
 }
