@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("ShootingEnemy");
     }
 
     public void Exit()

@@ -11,10 +11,15 @@ public class Enemy : MonoBehaviour
     //movement speed of enemy
     public float moveSpeed;
 
+    public float delay;
+    public float firerate;
+    public GameObject enemyBullet;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // For interval shooting
+        InvokeRepeating("Shoot", Random.Range(delay, delay+2), Random.Range(firerate, firerate+5));
     }
 
     // Update is called once per frame
@@ -52,5 +57,10 @@ public class Enemy : MonoBehaviour
             //destory this enemy
             Destroy(this.gameObject);
         }
+    }
+
+    void Shoot()
+    {
+        Instantiate(enemyBullet, transform.position + new Vector3(0, -0.8f, 0), new Quaternion(0, 0, 0, 0));
     }
 }
