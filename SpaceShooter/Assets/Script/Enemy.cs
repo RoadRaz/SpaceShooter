@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float power;
     //movement speed of enemy
     public float moveSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,10 @@ public class Enemy : MonoBehaviour
             //when health is below 0, destory this enemy
             Destroy(this.gameObject);
         }
+
+        // Destroy enemy when out of scene
+        if (transform.position.y < -6.0f)
+            Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
