@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject bullet;
     //player health
     public float health;
-
+    
     // Start is called before the first frame update
     void Start()
     {
