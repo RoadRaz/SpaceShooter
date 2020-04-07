@@ -956,9 +956,9 @@ MonoBehaviour:
   - {fileID: 4909245476275884151, guid: 2f475b390b91942bda8cd9c2886e29a1, type: 3}
   spawnValues: {x: 8, y: 5, z: 0}
   enemyCount: 10
-  spawnWait: 4
+  spawnWait: 2
   startWait: 1
-  waveWait: 1
+  waveWait: 4
 --- !u!4 &1892568693
 Transform:
   m_ObjectHideFlags: 0
