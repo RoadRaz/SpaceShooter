@@ -75,6 +75,7 @@ public class PlayerControl : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+       // HealthBarScript.health -= damage;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -83,7 +84,7 @@ public class PlayerControl : MonoBehaviour
         {
             // damage to player on enemy bullet hit
             health -= collision.gameObject.GetComponent<EnemyBullet>().power;
-
+           
             // destroy enemy bullet
             Destroy(collision.gameObject);
         }
