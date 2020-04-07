@@ -15,11 +15,15 @@ public class Enemy : MonoBehaviour
     public float firerate;
     public GameObject enemyBullet;
 
+    private AudioSource deathAS;
+
     // Start is called before the first frame update
     void Start()
     {
         // For interval shooting
         InvokeRepeating("Shoot", Random.Range(delay, delay+2), Random.Range(firerate, firerate+5));
+
+        deathAS = GameObject.Find("EnemyDeathAudio").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            deathAS.Play();
             //when health is below 0, destory this enemy
             Destroy(this.gameObject);
         }

@@ -13,11 +13,19 @@ public class PlayerControl : MonoBehaviour
     //player health
     public float health;
 
+    private AudioSource shootingAS;
+
+    private AudioSource deathAS;
+
     // Start is called before the first frame update
     void Start()
     {
         //set start position
         transform.position = new Vector3(0, -3, 0);
+
+        shootingAS = GetComponent<AudioSource>();
+
+        deathAS = GameObject.Find("PlayerDeathAudio").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,12 +37,14 @@ public class PlayerControl : MonoBehaviour
         //when space is hit, fire a bullet
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            shootingAS.Play();
             Instantiate(bullet, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
         }
 
         //open game over scene when player health below 0
         if (health <= 0)
         {
+            deathAS.Play();
             SceneManager.LoadScene("GameOver");
         }
     }

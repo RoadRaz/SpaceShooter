@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AbhiSpawning.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ShootingEnemy.unity
     guid: dea80f53e1b63704fba60f990ebf4e83
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 4c7021171f20410409e7f4941e38b056
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: e69abc766f1063e429ba0630166403a2
   m_configObjects: {}
