@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   power: 50
-  moveSpeed: 1
+  moveSpeed: 2
   delay: 0
   firerate: 0
   enemyBullet: {fileID: 1476658657559423455, guid: c90e52757fd194c1295827505513d189,
