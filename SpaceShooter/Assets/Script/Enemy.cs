@@ -39,9 +39,9 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //when bullet hit enemy
+               //when bullet hit enemy
         if(collision.gameObject.tag == "Bullet")
         {
             //hurt enemy with power of bullet
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
             collision.gameObject.GetComponent<PlayerControl>().TakeDamage(power);
             //destory this enemy
             Destroy(this.gameObject);
-        }
+        } 
     }
 
     void Shoot()

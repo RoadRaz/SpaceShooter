@@ -50,14 +50,14 @@ public class PlayerControl : MonoBehaviour
         transform.Translate(Vector3.up * moveSpeed * verticalInput * Time.deltaTime);
 
         //make sure player don't go beyond the screen
-        if (transform.position.x >= 10.3f)
+        if (transform.position.x >= 8.5f)
         {
-            transform.position = new Vector3(10.3f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(8.5f, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x <= -10.3f)
+        if (transform.position.x <= -8.5f)
         {
-            transform.position = new Vector3(-10.3f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-8.5f, transform.position.y, transform.position.z);
         }
 
         if (transform.position.y >= 4.5f)
@@ -77,9 +77,9 @@ public class PlayerControl : MonoBehaviour
         health -= damage;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "EnemyBullet")
+                if (collision.gameObject.tag == "EnemyBullet")
         {
             // damage to player on enemy bullet hit
             health -= collision.gameObject.GetComponent<EnemyBullet>().power;
@@ -87,6 +87,5 @@ public class PlayerControl : MonoBehaviour
             // destroy enemy bullet
             Destroy(collision.gameObject);
         }
-            
     }
 }
