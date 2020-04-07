@@ -803,6 +803,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &823490611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823490613}
+  - component: {fileID: 823490612}
+  m_Layer: 0
+  m_Name: BGGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &823490612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823490611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fb97ba205f347beb687f2c9ce54b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MIN_OUT_OF_SCREEN_DISTANCE: 15
+  levelPart_Start: {fileID: 3672530093572570926, guid: c85dc976125d94f5a9a0daf33afcd9d2,
+    type: 3}
+  levelList:
+  - {fileID: 2752597438464843126, guid: 7a711d211449647a58b7e39a39e44121, type: 3}
+  - {fileID: 8951921437360682571, guid: 782126bc24cff4a80bdbbba823378384, type: 3}
+  - {fileID: 5544124923275975426, guid: d1ee2b1e55b484e1497fca998e0d278b, type: 3}
+  moveSpeed: 1
+  startingSpawnLevelParts: 20
+--- !u!4 &823490613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823490611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 397.69717, y: 193.18507, z: -25254.879}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1128646032
 GameObject:
   m_ObjectHideFlags: 0
